@@ -1,5 +1,6 @@
 package com.luanrafael.servicedesk.controller;
 
+import com.luanrafael.servicedesk.model.CreateTicketRequest;
 import com.luanrafael.servicedesk.model.Ticket;
 import com.luanrafael.servicedesk.service.TicketService;
 import org.springframework.http.HttpStatus;
@@ -37,9 +38,9 @@ public class TicketController {
 
     @PostMapping("/tickets")
     @ResponseStatus(HttpStatus.CREATED)
-    public Ticket createTicket(
-            @RequestBody Ticket ticket
+    public Ticket createTicketRequest(
+            @RequestBody CreateTicketRequest ticketRequest
     ) {
-        return ticketService.createTicket(ticket);
+        return ticketService.createTicket(ticketRequest);
     }
 }
